@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Activities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">My Portfolio</a>
+      <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">소개</a>
+        <a class="active" href="activities.html">활동</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Activity List</p>
+      <h1>프로젝트와 활동 기록</h1>
+      <p>학습 과정에서 만든 결과물과 참여한 활동을 보기 쉽게 정리했습니다.</p>
+    </section>
+
+    <section class="section">
+      <div class="activity-toolbar">
+        <button class="filter-button active" type="button" data-filter="all">전체</button>
+        <button class="filter-button" type="button" data-filter="project">프로젝트</button>
+        <button class="filter-button" type="button" data-filter="study">학습</button>
+        <button class="filter-button" type="button" data-filter="award">수상</button>
+      </div>
+
+      <div class="activity-grid">
+        <article class="activity-card" data-category="project">
+          <div class="activity-icon">01</div>
+          <p class="activity-type">Project</p>
+          <h2>개인 포트폴리오 웹사이트</h2>
+          <p>HTML, CSS, JavaScript로 제작한 반응형 포트폴리오 사이트입니다.</p>
+          <span class="activity-date">2026.06</span>
+        </article>
+
+        <article class="activity-card" data-category="study">
+          <div class="activity-icon">02</div>
+          <p class="activity-type">Study</p>
+          <h2>프론트엔드 기초 학습</h2>
+          <p>시맨틱 HTML, CSS Grid/Flexbox, DOM 조작을 중심으로 공부했습니다.</p>
+          <span class="activity-date">2026.05</span>
+        </article>
+
+        <article class="activity-card" data-category="project">
+          <div class="activity-icon">03</div>
+          <p class="activity-type">Project</p>
+          <h2>할 일 관리 앱</h2>
+          <p>기본 JavaScript를 사용해 추가, 삭제, 완료 표시 기능을 구현했습니다.</p>
+          <span class="activity-date">2026.04</span>
+        </article>
+
+        <article class="activity-card" data-category="award">
+          <div class="activity-icon">04</div>
+          <p class="activity-type">Award</p>
+          <h2>교내 웹 제작 발표</h2>
+          <p>직접 만든 웹페이지의 구조와 디자인 과정을 발표했습니다.</p>
+          <span class="activity-date">2026.03</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Art Choi. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
