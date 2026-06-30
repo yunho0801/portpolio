@@ -28,6 +28,7 @@ filterButtons.forEach((button) => {
 const contactForm = document.getElementById("contactForm");
 const responseMessage = document.getElementById("responseMessage");
 const makeWebhookUrl = "https://hook.us1.make.com/your_unique_webhook_id";
+const isWebhookConfigured = !makeWebhookUrl.includes("your_unique_webhook_id");
 
 function showResponseMessage(type, message) {
   if (!responseMessage) {
@@ -46,24 +47,24 @@ if (contactForm) {
     const email = document.getElementById("visitorEmail").value;
     const message = document.getElementById("visitorMessage").value;
 
+    if (!isWebhookConfigured) {
+      showResponseMessage("error", "Make.com Webhook URL이 아직 연결되지 않았습니다. script.js의 makeWebhookUrl 값을 실제 URL로 교체해주세요.");
+      return;
+    }
+
     showResponseMessage("loading", "AI 에이전트가 질문을 분석 중입니다. 잠시만 기다려주세요.");
 
     try {
-      const response = await fetch(makeWebhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          visitor_name: name,
-          visitor_email: email,
-          visitor_message: message,
-        }),
-      });
+      const formData = new FormData();
+      formData.append("visitor_name", name);
+      formData.append("visitor_email", email);
+      formData.append("visitor_message", message);
 
-      if (!response.ok) {
-        throw new Error("Webhook request failed");
-      }
+      await fetch(makeWebhookUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
 
       showResponseMessage("success", "질문이 성공적으로 접수되었습니다. 입력하신 메일로 AI의 답변이 곧 발송됩니다.");
       contactForm.reset();
