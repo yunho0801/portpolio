@@ -78,7 +78,7 @@ script.js
 
 ## Step 5. JavaScript 기능 추가하기
 
-`script.js`는 모바일 메뉴와 활동 필터 기능을 담당합니다.
+`script.js`는 모바일 메뉴, 활동 필터, AI 설문 전송 기능을 담당합니다.
 
 ```javascript
 const menuButton = document.querySelector(".menu-button");
@@ -109,11 +109,29 @@ filterButtons.forEach((button) => {
 });
 ```
 
-## Step 6. 실행하기
+## Step 6. AI 설문 서비스 연결하기
+
+Make.com에서 Custom Webhook URL을 발급받은 뒤 `script.js`의 아래 값을 실제 URL로 바꿉니다.
+
+```javascript
+const makeWebhookUrl = "https://hook.us1.make.com/your_unique_webhook_id";
+```
+
+폼에서 전송되는 데이터 형식은 아래와 같습니다.
+
+```json
+{
+  "visitor_name": "입력한 이름",
+  "visitor_email": "입력한 이메일",
+  "visitor_message": "입력한 질문"
+}
+```
+
+## Step 7. 실행하기
 
 브라우저에서 `index.html`을 열면 웹사이트가 실행됩니다.
 
-## Step 7. GitHub 업로드하기
+## Step 8. GitHub 업로드하기
 
 Git이 설치되어 있고 GitHub 레포지터리가 준비되어 있다면 아래 명령어를 사용합니다.
 

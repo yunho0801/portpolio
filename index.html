@@ -21,6 +21,7 @@
       <div class="nav-links">
         <a class="active" href="index.html">소개</a>
         <a href="activities.html">활동</a>
+        <a href="#ai-survey">AI 설문</a>
       </div>
     </nav>
   </header>
@@ -86,6 +87,39 @@
           <div class="skill-bar"><strong style="width: 84%"></strong></div>
         </div>
       </div>
+    </section>
+
+    <section class="section ai-survey-section" id="ai-survey">
+      <div class="section-title">
+        <p class="eyebrow">AI Survey Service</p>
+        <h2>AI 에이전트에게 질문하기</h2>
+        <p>
+          궁금한 내용을 남기면 AI 에이전트가 질문을 분석하고 입력한 이메일로 답변을 보낼 수 있도록
+          설계한 설문 서비스 영역입니다.
+        </p>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-grid">
+          <label for="visitorName">
+            <span>이름</span>
+            <input type="text" id="visitorName" name="visitorName" placeholder="이름" required>
+          </label>
+
+          <label for="visitorEmail">
+            <span>이메일</span>
+            <input type="email" id="visitorEmail" name="visitorEmail" placeholder="이메일" required>
+          </label>
+        </div>
+
+        <label for="visitorMessage">
+          <span>질문</span>
+          <textarea id="visitorMessage" name="visitorMessage" placeholder="AI 에이전트에게 할 질문을 입력하세요" required></textarea>
+        </label>
+
+        <button class="button primary form-submit" type="submit">AI 에이전트에게 질문하기</button>
+        <div class="response-message" id="responseMessage" role="status" aria-live="polite"></div>
+      </form>
     </section>
   </main>
 
